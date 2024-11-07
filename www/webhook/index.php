@@ -26,7 +26,11 @@ try {
     $sendsay->sendSubscriber($email, $phone, $data);
     $status = 'success';
 
-    Registry::getInstance(LOGGER_MAIN)->debug('SENDSAY SUCCESS');
+    Registry::getInstance(LOGGER_MAIN)->debug('SENDSAY SUCCESS', [
+        'email' => $email,
+        'phone' => $phone,
+        'data' => $data,
+    ]);
 } catch (JsonException|RuntimeException $e) {
     Registry::getInstance(LOGGER_MAIN)->error('SENDSAY ERROR ' . $e->getMessage(), [
         'exception' => $e,
