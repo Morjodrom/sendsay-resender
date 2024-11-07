@@ -1,0 +1,14 @@
+{
+    "name": "sendsay/resender",
+    "type": "project",
+    "require": {
+        "monolog/monolog": "^3.7"
+    },
+    "license": "eula",
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "lib\\": "lib/"
+        }
+    }
+}
