@@ -25,6 +25,8 @@ $sendsay = new SendSay(SENDSAY_TOKEN);
 try {
     $sendsay->sendSubscriber($email, $phone, $data);
     $status = 'success';
+
+    Registry::getInstance(LOGGER_MAIN)->debug('SENDSAY SUCCESS');
 } catch (JsonException|RuntimeException $e) {
     Registry::getInstance(LOGGER_MAIN)->error('SENDSAY ERROR ' . $e->getMessage(), [
         'exception' => $e,
